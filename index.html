@@ -1,15 +1,171 @@
-<html>
+<!doctype html>
+<html lang="en">
   <head>
-    <title>Registration page -demo</title>
-    <link rel="stylesheet" type="text/css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Enterprise Hiring Portal</title>
+    <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
-    <center>
-    <h1>Welcome to Event Registration !</h1>
-    <hr>
-    <a href="https://google.com">
-        <img src="assets/wallpaper.jpg" width="50%">
-    </a>
-    </center>
+    <header>
+      <h1>XYZ Technologies</h1>
+      <p>Enterprise Hiring Portal</p>
+    </header>
+    <nav>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Open Roles</a></li>
+        <li><a href="#">Apply</a></li>
+      </ul>
+    </nav>
+    <main>
+      <center>
+        <section class="intro">
+          <h2>Apply for a Position</h2>
+          <p>Please fill out all required fields carefully.</p>
+        </section>
+      </center>
+      <section class="form-container">
+        <label for="profile">Profile Completion</label>
+        <progress value="0" max="100"></progress>
+        <!-- Form goes here -->
+        <form action="#" method="post" enctype="multipart/form-data">
+          <!-- enctype is required for allowing file upload-->
+          <fieldset>
+            <legend>Personal Details</legend>
+
+            <label for="name">Full Name *</label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              required
+              placeholder="Enter full name"
+            />
+
+            <label for="email">Email *</label>
+            <input type="email" id="email" name="email" required placeholder="Enter Email Address"/>
+
+            <label for="phone">Phone *</label>
+            <input
+              type="tel"
+              id="phone"
+              name="phone"
+              pattern="[0-9]{10}"
+              required
+              placeholder="Enter Phone Number"
+            />
+
+            <label for="dob">Date of Birth *</label>
+            <input type="date" id="dob" name="dob" required placeholder="Enter DOB"/>
+          </fieldset>
+
+          <fieldset>
+            <legend>Address</legend>
+
+            <label for="address">Street Address</label>
+            <textarea id="address" name="address" placeholder="Enter Address"></textarea>
+
+            <label for="city">City</label>
+            <input type="text" id="city" name="city" placeholder="Enter Your City"/>
+
+            <label for="state">State</label>
+            <input type="text" id="state" name="state" placeholder="Enter Your State"/>
+
+            <label for="country">Select Conutry *</label>
+            <select id="country" name="country" required>
+              <option value="">--Select Conutry--</option>
+              <option value="India">India</option>
+              <option value="UK">UK</option>
+              <option value="USA">USA</option>
+            </select>
+            <label for="zipcode">Zip Code</label>
+            <input type="number" id="zipcode" name="zipcode" placeholder="Enter Zip Code"/>
+          </fieldset>
+          <fieldset>
+            <legend>Job Preferences</legend>
+
+            <label for="role">Select Role *</label>
+            <select id="role" name="role" required>
+              <option value="">--Select--</option>
+              <option value="Frontend Developer">Frontend Developer</option>
+              <option value="Backend Developer">Backend Developer</option>
+              <option value="Full Stack Developer">Full Stack Developer</option>
+            </select>
+
+            <p>Employment Type</p>
+            <input type="radio" name="employment" value="fulltime" required />
+            Full-time
+            <input type="radio" name="employment" value="contract" /> Contract
+
+            <p>Skills</p>
+            <input type="checkbox" name="skills" value="html" /> HTML
+            <input type="checkbox" name="skills" value="css" /> CSS
+            <input type="checkbox" name="skills" value="python" /> Python
+
+            <label for="Skills">Skills</label>
+            <input
+              type="text"
+              list="skills"
+              name="skill"
+              placeholder="Choose or type a skill"
+            />
+            <datalist id="skills">
+              <option value="HTML"></option>
+              <option value="CSS"></option>
+              <option value="JAVA"></option>
+              <option value="Python"></option>
+            </datalist>
+          </fieldset>
+          <fieldset>
+            <legend>Professional Details</legend>
+
+            <label for="experience">Experience (Years)</label>
+            <input type="number" id="experience" min="0" max="40" placeholder="Enter Your Experience"/>
+
+            <label for="portfolio">Portfolio URL</label>
+            <input type="url" id="portfolio" placeholder="Enter Portfolio Link"/>
+
+            <label for="salary">Expected Salary</label>
+            01<input type="range" id="salary" min="1" max="50" />50
+
+            <label for="interview">Preferred Interview Time</label>
+            <input type="time" id="interview" />
+          </fieldset>
+          <fieldset>
+            <legend>Uploads & Preferences</legend>
+
+            <label for="resume">Upload Resume *</label>
+            <input type="file" id="resume" accept=".pdf,.doc,.docx" required />
+
+            <label for="photo">Upload Profile Photo</label>
+            <input type="file" id="photo" accept="image/*" />
+
+            <label for="color">Choose Theme Color</label>
+            <input type="color" id="color" />
+          </fieldset>
+          <fieldset>
+            <legend>Additional Information</legend>
+
+            <label for="availability">Available From</label>
+            <input type="week" id="availability" />
+
+            <label for="rating">Self Rating</label>
+            <input type="range" min="1" max="10" />
+
+            <label for="comments">Comments</label>
+            <textarea id="comments" placeholder="Enter Comment"></textarea>
+          </fieldset>
+          <div class="buttons">
+            <button type="submit">Submit</button>
+            <button type="reset">Reset</button>
+          </div>
+        </form>
+      </section>
+    </main>
+
+    <footer>
+      <p>© 2026 XYZ Technologies</p>
+    </footer>
   </body>
 </html>
